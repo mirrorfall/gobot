@@ -1,8 +1,8 @@
 APP=$(shell basename $(shell git remote get-url origin) | sed 's/\.git//')
 REGISTRY=mirrorfall
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETOS=linux
-TARGETARCH=amd64
+TARGETOS=$(shell uname -s | tr '[:upper:]' '[:lower:]')
+TARGETARCH=$(shell if [ $(shell uname -m) = "x86_64" ]; then echo "amd64"; else uname -m; fi)
 
 format:
 	gofmt -s -w ./
