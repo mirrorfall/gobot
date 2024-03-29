@@ -1,8 +1,8 @@
 APP=$(shell basename $(shell git remote get-url origin) | sed 's/\.git//')
 REGISTRY=mirrorfall
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETOS=darwin
-TARGETARCH=arm64
+TARGETOS=linux
+TARGETARCH=amd64
 
 format:
 	gofmt -s -w ./
@@ -21,3 +21,5 @@ push:
 clean:
 	rm -rf gobot
 	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+dive:
+	dive --ci --lowestEfficiency=0.9 ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
