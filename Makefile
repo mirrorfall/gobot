@@ -20,3 +20,4 @@ push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 clean:
 	rm -rf gobot
+	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
