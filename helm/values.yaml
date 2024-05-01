@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: mirrorfall
+  tag: "1.0.4-5d2d2c1-amd64"
+  arch: amd64
+
+secret:
+  name: "gobot"
+  env: "TELE_TOKEN"
+  key: "token"
+securityContext:
+  privileged: true
+
+imagePullSecrets:
+- name: regcred
