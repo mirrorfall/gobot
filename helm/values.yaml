@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   registry: "ghcr.io"
   repository: "mirrorfall/gobot"
-  tag: "v1.0.4-a3ce46a"
+  tag: "v1.0.4-60d4d98"
   arch: amd64
   os: linux
 secret:
