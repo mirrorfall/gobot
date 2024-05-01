@@ -2,6 +2,7 @@ name: GOBOT-CICD
 env:
   TARGETOS: linux
   TARGETARCH: amd64
+  REGISTRY: ghcr.io
 
 on: 
   push:
@@ -21,7 +22,6 @@ jobs:
           - name: 'Login to GitHub Container Registry'
             uses: docker/login-action@v3
             with:
-              registry: ghcr.io
               username: ${{ github.actor }}
               password: ${{ secrets.GHCR_SECRET }}
           - name: Build&Push
