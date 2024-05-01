@@ -15,3 +15,8 @@ jobs:
             with:
               username: ${{ secrets.DOCKERHUB_USERNAME }}
               password: ${{ secrets.DOCKERHUB_TOKEN }}
+          - name: Build&Push
+            env:
+              APP: "gobot"
+              REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+            run: make image push
