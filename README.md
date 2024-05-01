@@ -2,8 +2,6 @@
 
 GoBot is my first Telegram bot using Go.
 
-My own bot is t.me/mirrorfallgobot
-
 ## Usage
 
 To use GoBot, follow these instructions:
