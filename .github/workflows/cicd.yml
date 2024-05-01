@@ -1,5 +1,8 @@
 name: GOBOT-CICD
-
+env:
+  TARGETOS: linux
+  TARGETARCH: amd64
+  
 on: push
 
 jobs:
