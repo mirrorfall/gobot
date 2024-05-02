@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         GITHUB_TOKEN=credentials('mirrorfall')
-        REPO = 'https://github.com/mirrorfall/kbot.git'
+        REPO = 'https://github.com/mirrorfall/gobot.git'
         BRANCH = 'main'
     }
 
